@@ -1,7 +1,7 @@
 resource "aws_amplify_app" "main" {
   name                     = var.app-name
   repository               = var.repository
-  access_token = var.access-token
+  access_token             = var.access-token
   enable_branch_auto_build = true
   build_spec               = <<-EOT
     version: 0.1

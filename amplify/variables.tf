@@ -1,19 +1,14 @@
 variable "app-name" {
-  type = string
+  type        = string
   description = "Application name"
 }
 
 variable "repository" {
-    type = string 
-    description = "Git repository url"
-}
-
-variable "role-arn" {
-    type = string
-    description = "IAM service role arn"
+  type        = string
+  description = "Git repository url"
 }
 
 variable "access-token" {
-    type = string
-    description = "GitHub access token"
+  type        = string
+  description = "GitHub access token"
 }
