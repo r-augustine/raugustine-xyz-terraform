@@ -6,4 +6,10 @@ terraform {
       version = "~> 4.48.0"
     }
   }
+  cloud {
+    organization = "r-augustine"
+    workspaces {
+      name = "raugustine-xyz-terraform"
+    }
+  }
 }
