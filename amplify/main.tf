@@ -9,7 +9,7 @@ resource "aws_amplify_app" "main" {
       phases:
         preBuild:
           commands:
-            - npm install
+            - npm ci
         build:
           commands:
             - npm run build
