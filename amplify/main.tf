@@ -4,7 +4,7 @@ resource "aws_amplify_app" "main" {
   access_token             = var.access-token
   enable_branch_auto_build = true
   build_spec               = <<-EOT
-    version: 0.1
+    version: 0.3
     frontend:
       phases:
         preBuild:
@@ -21,10 +21,11 @@ resource "aws_amplify_app" "main" {
         paths:
           - node_modules/**/*
   EOT
+  platform = "WEB_COMPUTE"
   # The default rewrites and redirects added by the Amplify Console.
   custom_rule {
     source = "/<*>"
-    status = "404"
+    status = "404-200"
     target = "/index.html"
   }
   environment_variables = {
