@@ -14,7 +14,7 @@ resource "aws_amplify_app" "main" {
           commands:
             - npm run build
       artifacts:
-        baseDirectory: dist
+        baseDirectory: .next
         files:
           - '**/*'
       cache:
@@ -35,13 +35,13 @@ resource "aws_amplify_app" "main" {
 resource "aws_amplify_branch" "dev" {
   app_id      = aws_amplify_app.main.id
   branch_name = "dev"
-  framework   = "React"
+  framework   = "Next.js - SSR"
   stage       = "DEVELOPMENT"
 }
 
 resource "aws_amplify_branch" "main" {
   app_id      = aws_amplify_app.main.id
   branch_name = "main"
-  framework   = "React"
+  framework   = "Next.js - SSR"
   stage       = "PRODUCTION"
 }
